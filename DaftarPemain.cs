@@ -64,8 +64,11 @@ namespace KejarMei
                 index = putaran;
                 Pemain pemain_temp = daftar_pemain[index];
 
-                while ((index >= 1) && (daftar_pemain[index - 1].NomorPunggung < pemain_temp.NomorPunggung))
+                while ((index >= 1) && (daftar_pemain[index - 1].Nama.CompareTo(pemain_temp.Nama)>0))
                 {
+                    //Less than Zero: if Current Instance < value or Current instance is not a number (NaN) and value is a number.
+                    //Zero: if Current Instance = value or Both the current instance and value are not a number (NaN), PositiveInfinity, or NegativeInfinity.
+                    //Greater than Zero: if Current Instance > value or the current instance is a number and value is not a number (NaN).
                     daftar_pemain[index] = daftar_pemain[index - 1];
                     index--;
                 }
